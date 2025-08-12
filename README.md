@@ -1,4 +1,4 @@
-# ComfyUI_Sliding_Window
+# ComfyUI Sliding Window
 
 This set of nodes provides a powerful sliding window or "tiling" technique for processing long videos and animations in ComfyUI. It allows you to work on animations that are longer than your VRAM would typically allow by breaking the job into smaller, overlapping chunks and seamlessly blending them back together. 
 
@@ -6,25 +6,25 @@ Created these for my own experiments, and I'm sharing them so you can play with 
 
 ---
 
-### ⚙️ Installation
+## 🛠️ Installation
 
-To install these nodes, you can clone this repository into your ComfyUI `custom_nodes` folder. The recommended way is to use a Python virtual environment to keep your dependencies clean.
+Follow these simple steps to get the Memory Purge node up and running in your ComfyUI environment.
 
-**1. Navigate to your ComfyUI custom_nodes directory:**
-Open your terminal or command prompt and navigate to the `custom_nodes` folder inside your ComfyUI installation.
+### Step 1. Clone the Repository
 
+First, you need to clone this repository into your `ComfyUI/custom_nodes/` directory.
+
+Open your terminal or command prompt and navigate to your ComfyUI installation folder.
+
+**For a standard PC installation:**
 ```bash
-cd path/to/your/ComfyUI/custom_nodes/
-```
-
-**2. Clone the Repository:**
-Use `git` to clone the nodes into this directory.
-
-```bash
+cd ComfyUI/custom_nodes/
 git clone https://github.com/PixWizardry/ComfyUI_Sliding_Window
 ```
 
-Once cloned, restart ComfyUI, and the new nodes should appear in the node menu.
+### Step 2: Restart ComfyUI
+
+After the repository has been successfully cloned, make sure to restart ComfyUI. This will allow it to recognize and load the new custom node.
 
 ---
 
