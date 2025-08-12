@@ -2,7 +2,7 @@
 
 This set of nodes provides a powerful sliding window or "tiling" technique for processing long videos and animations in ComfyUI. It allows you to work on animations that are longer than your VRAM would typically allow by breaking the job into smaller, overlapping chunks and seamlessly blending them back together. 
 
-Some vibe coding and created these for my own experiments, and I'm sharing them so you can play with them and build amazing things too!
+Created these for my own experiments, and I'm sharing them so you can play with them and build amazing things too!
 
 ---
 
