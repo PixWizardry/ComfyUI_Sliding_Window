@@ -21,7 +21,7 @@ cd path/to/your/ComfyUI/custom_nodes/
 Use `git` to clone the nodes into this directory.
 
 ```bash
-git clone https://github.com/PixWizardry/ComfyUI_Sliding_Window/tree/main
+git clone https://github.com/PixWizardry/ComfyUI_Sliding_Window
 ```
 
 Once cloned, restart ComfyUI, and the new nodes should appear in the node menu.
