@@ -1,1 +1,70 @@
 # ComfyUI_Sliding_Window
+
+This set of nodes provides a powerful sliding window or "tiling" technique for processing long videos and animations in ComfyUI. It allows you to work on animations that are longer than your VRAM would typically allow by breaking the job into smaller, overlapping chunks and seamlessly blending them back together. 
+
+Some vibe coding and created these for my own experiments, and I'm sharing them so you can play with them and build amazing things too!
+
+---
+
+### ⚙️ Installation
+
+To install these nodes, you can clone this repository into your ComfyUI `custom_nodes` folder. The recommended way is to use a Python virtual environment to keep your dependencies clean.
+
+**1. Navigate to your ComfyUI custom_nodes directory:**
+Open your terminal or command prompt and navigate to the `custom_nodes` folder inside your ComfyUI installation.
+
+```bash
+cd path/to/your/ComfyUI/custom_nodes/
+```
+
+**2. Clone the Repository:**
+Use `git` to clone the nodes into this directory.
+
+```bash
+git clone https://github.com/PixWizardry/ComfyUI_Sliding_Window/tree/main
+```
+
+Once cloned, restart ComfyUI, and the new nodes should appear in the node menu.
+
+---
+
+### ✨ Available Nodes
+
+Here is a breakdown of the nodes included in this package and what they do.
+
+#### **Prepare Latent Schedule**
+This is the starting point for setting up your sliding window. It defines the "schedule" for how the sampler will process your animation in chunks.
+
+*   **What it does:** Takes your full latent and creates a plan for processing it in smaller, overlapping segments.
+*   **Key Inputs:**
+    *   `latent_image`: The entire latent sequence you want to process.
+    *   `context_length`: The number of frames in each processing window. Think of this as the size of each chunk.
+    *   `context_overlap`: The number of frames that overlap between consecutive windows. This is crucial for creating a smooth blend.
+    *   `fuse_method`: The shape of the blending window for the overlapping frames. Different methods provide different blending smoothness:
+        *   `linear`: A standard, trapezoidal cross-fade.
+        *   `pyramid`: A triangular blend, often smoother than linear.
+        *   `gaussian`: A very soft, gradual blend shaped like a bell curve.
+        *   `cubic`: A smooth "S-curve" blend.
+        *   `None`: No Smoothing, Recommended
+
+#### **Iterative Sampler**
+This is the main workhorse. It's a powerful sampler that has two modes of operation, giving you flexibility in your workflows.
+
+*   **What it does:** It can either process an animation chunk-by-chunk using the schedule or act like a standard KSampler.
+*   **Operating Modes:**
+    *   **1. Sliding Window Mode (with `latent_schedule`):** This is the advanced mode. Connect the `PrepareLatentSchedule` node here. The sampler will iteratively work through each window, denoise it, and blend it with the others according to your settings. This is perfect for generating long, temporally consistent animations.
+    *   **2. Legacy Mode (with `latent_image_optional`):** If you connect a latent directly to this input, the node will behave just like the standard ComfyUI KSampler (Advanced), processing the entire latent at once. This is useful for shorter animations or for when you don't need the sliding window functionality.
+
+#### **Calculate Latent Frames**
+This is a handy utility node designed to prevent errors and make setup easier.
+
+*   **What it does:** It helps you calculate the correct number of latent frames based on your desired final video length and ensures your context length settings are valid.
+*   **Key Inputs & Outputs:**
+    *   **Inputs:**
+        *   `pixel_frames`: The total number of frames in your final video.
+        *   `context_length_cap`: The maximum context length your model can handle (e.g., its native training size).
+        *   `rifle_length_cap`: A specific cap for architectural limits of other nodes you might be using, like a RoPE patcher.
+    *   **Outputs:**
+        *   `total_latent_frames`: The correct number of latent frames that corresponds to your pixel frames.
+        *   `capped_context_length`: A "safe" context length to use in the `PrepareLatentSchedule` node, ensuring it doesn't exceed the total number of frames available.
+        *   `capped_rifle_rope_length`: A "safe" value to use for other specialized nodes, preventing potential errors.
