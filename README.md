@@ -6,7 +6,7 @@ Created these for my own experiments, and I'm sharing them so you can play with 
 
 ## 🛠️ Installation
 
-Follow these simple steps to get the Memory Purge node up and running in your ComfyUI environment.
+Follow these simple steps to get the node up and running in your ComfyUI environment.
 
 ### Step 1. Clone the Repository
 
