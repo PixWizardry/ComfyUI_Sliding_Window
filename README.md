@@ -4,8 +4,6 @@ This set of nodes provides a powerful sliding window or "tiling" technique for p
 
 Created these for my own experiments, and I'm sharing them so you can play with them and build amazing things too!
 
----
-
 ## 🛠️ Installation
 
 Follow these simple steps to get the Memory Purge node up and running in your ComfyUI environment.
