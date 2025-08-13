@@ -7,7 +7,7 @@
 
 # WIP
 
-This set of nodes provides a powerful sliding window or "tiling" technique for processing long videos and animations in ComfyUI. It allows you to work on animations that are longer than your VRAM would typically allow by breaking the job into smaller, overlapping chunks and seamlessly blending them back together. 
+This set of nodes provides a powerful sliding window or "tiling" technique for processing long videos and animations in ComfyUI. It allows you to break the job into smaller, overlapping chunks and seamlessly blending them back together. 
 
 Created these for my own experiments, and I'm sharing them so you can play with them and build amazing things too!
 
@@ -57,7 +57,7 @@ This is the main workhorse and has two modes of operation, giving you flexibilit
 
 *   **What it does:** It process an animation chunk-by-chunk using the Sliding Window Options.
 *   **Operating Modes:**
-    *   **1. Sliding Window Mode (with `latent_schedule`):** This is the advanced mode. Connect the `Sliding Window Options` node here. The sampler will iteratively work through each window, denoise it, and/or blend it with the others according to your settings. This is perfect for generating long, temporally consistent animations.
+    *   **1. Sliding Window Mode (with `latent_schedule`):** This is the advanced mode. Connect the `Sliding Window Options` node here. The sampler will iteratively work through each window, denoise it, and/or blend it with the others according to your settings.
     *   **2. Legacy Mode (with `latent_image_optional`):** If you connect a latent directly to this input, the node will behave just like the standard ComfyUI KSampler (Advanced), processing the entire latent at once. This is useful for shorter animations or for when you don't need the sliding window functionality.
 
 #### **Calculate Context & Limits**
