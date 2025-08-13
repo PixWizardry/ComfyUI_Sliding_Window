@@ -30,7 +30,7 @@ After the repository has been successfully cloned, make sure to restart ComfyUI.
 
 Here is a breakdown of the nodes included in this package and what they do.
 
-#### **Prepare Latent Schedule**
+#### **Sliding Window Options**
 This is the starting point for setting up your sliding window. It defines the "schedule" for how the sampler will process your animation in chunks.
 
 *   **What it does:** Takes your full latent and creates a plan for processing it in smaller, overlapping segments.
@@ -45,7 +45,7 @@ This is the starting point for setting up your sliding window. It defines the "s
         *   `cubic`: A smooth "S-curve" blend.
         *   `None`: No Smoothing, Recommended
 
-#### **Iterative Sampler**
+#### **KSampler (Sliding Window)**
 This is the main workhorse and has two modes of operation, giving you flexibility in your workflows.
 
 *   **What it does:** It process an animation chunk-by-chunk using the Prepare Latent schedule.
@@ -53,7 +53,7 @@ This is the main workhorse and has two modes of operation, giving you flexibilit
     *   **1. Sliding Window Mode (with `latent_schedule`):** This is the advanced mode. Connect the `PrepareLatentSchedule` node here. The sampler will iteratively work through each window, denoise it, and/or blend it with the others according to your settings. This is perfect for generating long, temporally consistent animations.
     *   **2. Legacy Mode (with `latent_image_optional`):** If you connect a latent directly to this input, the node will behave just like the standard ComfyUI KSampler (Advanced), processing the entire latent at once. This is useful for shorter animations or for when you don't need the sliding window functionality.
 
-#### **Calculate Latent Frames**
+#### **Calculate Context & Limits**
 This is a handy utility node designed to prevent errors and make setup easier.
 
 *   **What it does:** It helps you calculate the correct number of latent frames based on your desired final video length and ensures your context length settings are valid.
