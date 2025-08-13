@@ -1,4 +1,4 @@
-# ComfyUI Sliding Window
+# ComfyUI WAN Sliding Window
 
 ![Python 3.12](https://img.shields.io/badge/Python-3.12-76B900) 
 ![NVIDIA RTX Driver Release 580](https://img.shields.io/badge/RTX%20Driver-R580%20U1%20(580.88)-76B900)
@@ -7,7 +7,7 @@
 
 # WIP
 
-This set of nodes provides a powerful sliding window or "tiling" technique for processing long videos and animations in ComfyUI. It allows you to break the job into smaller, overlapping chunks and seamlessly blending them back together. 
+This set of nodes provides a powerful sliding window or "tiling" technique for processing long WAN videos and animations in ComfyUI. It allows you to break the job into smaller, overlapping chunks and seamlessly blending them back together. 
 
 Created these for my own experiments, and I'm sharing them so you can play with them and build amazing things too!
 
