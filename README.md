@@ -50,7 +50,7 @@ This is the main workhorse and has two modes of operation, giving you flexibilit
 
 *   **What it does:** It process an animation chunk-by-chunk using the Prepare Latent schedule.
 *   **Operating Modes:**
-    *   **1. Sliding Window Mode (with `latent_schedule`):** This is the advanced mode. Connect the `PrepareLatentSchedule` node here. The sampler will iteratively work through each window, denoise it, and/or blend it with the others according to your settings. This is perfect for generating long, temporally consistent animations.
+    *   **1. Sliding Window Mode (with `latent_schedule`):** This is the advanced mode. Connect the `Sliding Window Options` node here. The sampler will iteratively work through each window, denoise it, and/or blend it with the others according to your settings. This is perfect for generating long, temporally consistent animations.
     *   **2. Legacy Mode (with `latent_image_optional`):** If you connect a latent directly to this input, the node will behave just like the standard ComfyUI KSampler (Advanced), processing the entire latent at once. This is useful for shorter animations or for when you don't need the sliding window functionality.
 
 #### **Calculate Context & Limits**
