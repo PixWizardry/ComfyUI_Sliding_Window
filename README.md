@@ -73,3 +73,6 @@ This is a handy utility node designed to prevent errors and make setup easier.
         *   `total_latent_frames`: The correct number of latent frames that corresponds to your pixel frames.
         *   `capped_context_length`: A "safe" context length to use in the `PrepareLatentSchedule` node, ensuring it doesn't exceed the total number of frames available.
         *   `capped_rifle_rope_length`: A "safe" value to use for other specialized nodes, preventing potential errors.
+
+
+Licensed under the GNU Affero General Public License v3.0
