@@ -1,9 +1,10 @@
 # ComfyUI WAN Sliding Window
 ![Tested ENV](https://img.shields.io/badge/Tested%20ENV:-lightgrey)
-![Python 3.12](https://img.shields.io/badge/Python-3.12-76B900) 
+![Python 3.12.x](https://img.shields.io/badge/Python-3.12.x-76B900) 
 ![NVIDIA RTX Driver Release 580](https://img.shields.io/badge/RTX%20Driver-R580%20U1%20(580.88)-76B900)
-![Pytorch Ver 2.9.0.dev](https://img.shields.io/badge/Pytorch-2.9.0.dev-76B900)
+![Pytorch Ver 2.9.0.dev20250807+cu129](https://img.shields.io/badge/Pytorch-2.9.0.dev+cu129-76B900)
 ![Cuda Ver 12.9](https://img.shields.io/badge/Cuda-12.9-76B900)
+![Platform Windows](https://img.shields.io/badge/Platform-Windows-76B900)
 
 # WIP
 
